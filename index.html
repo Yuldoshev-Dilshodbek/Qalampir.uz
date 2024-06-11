@@ -1,0 +1,1279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./src/output.css">
+    <title>Document</title>
+</head>
+<style>
+    .container {
+        max-width: 1380px;
+        margin: 0 auto;
+    }
+
+    .header__list {
+        display: flex;
+        gap: 1rem;
+    }
+  
+
+    body.dark .moon-icon {
+        display: inline;
+    }
+
+    .carousel-item {
+            display: none;
+        }
+        .carousel-item.active {
+            display: block;
+        }
+        .dropdown {
+            position: relative;
+        }
+        
+         /* Custom scrollbar styles */
+         .custom-scrollbar::-webkit-scrollbar {
+            width: 12px; /* Adjust the width of the scrollbar */
+        }
+
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background-color: #ff0000; /* Set the color of the scrollbar thumb to red */
+            border-radius: 6px; /* Make the scrollbar thumb rounded */
+        }
+
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background-color: #f1f1f1; /* Set the color of the scrollbar track */
+        }
+
+        /* For Firefox */
+        .custom-scrollbar {
+            scrollbar-width: thin;
+            scrollbar-color: #ff0000 #f1f1f1; /* thumb color and track color */
+        }
+    
+    @media (max-width: 640px) {
+      .header__list {
+        display: none;
+      }
+    }
+    @media (max-width: 640px) {
+      .red-box {
+        margin-top: 25rem;
+        width: 100%;
+        margin-left: -30.7rem;
+        width: 470px;
+      }
+      .main__text {
+        font-size: 20px;
+      }
+    }
+    @media (max-width: 640px) {
+      .katta-box {
+        margin-top: rem;
+        width: 100%;
+        width: 470px;
+        padding: 0 20px;
+        /* height: 1200px; */
+      }
+      .main__text {
+        font-size: 20px;
+      }
+    }
+    @media (max-width: 640px) {
+      .kichik-box {
+        margin-top: rem;
+        width: 100%;
+        width: 470px;
+        padding: 0 20px;
+        margin-top: 3rem;
+        height: 1060px;
+      }
+      .main__text {
+        font-size: 20px;
+      }
+    }
+    @media (max-width: 640px) {
+      .video-yangiliklar {
+        width: 100%;
+        margin: 0 auto;
+        padding: 0 40px;
+        margin-top: 3rem;
+        margin-left: -2.3rem;
+        row-gap: 2rem;
+      }
+      .main__text {
+        font-size: 20px;
+      }
+    }
+    @media (max-width: 640px) {
+        .video-link {
+            margin-left: 1.5rem;
+        }
+    }
+    @media (max-width: 640px) {
+        .quticha {
+            width: 470px;
+            margin: 0 auto;
+            margin-top: 4rem;
+        }
+    }
+
+    @media (max-width: 640px) {
+        .jamiyat {
+            width: 470px;
+            margin: 0 auto;
+            margin-top: 4rem;
+        }
+    }
+    @media (max-width: 640px) {
+        .olam {
+            width: 470px;
+            margin: 0 auto;
+            margin-top: 1rem;
+        }
+    }
+
+    
+</style>
+<body class="bg-white text-black transition-colors duration-500 dark:bg-black dark:text-white">
+    <header>
+        <div class="container py-5 px-3">
+            <div class="flex justify-between items-center">
+                <svg width="160" height="38" viewBox="0 0 160 38" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path class="qalampir-svg"
+                        d="M37.2993 23.7982H41.0003L39.1728 19.3525L37.2993 23.7982ZM32.0259 28.3107L39.2126 13.6702H39.4248L46.4525 28.3107H42.9338L42.0416 26.2451H36.3243L35.4123 28.3107H32.0259ZM48.4816 28.3107V14.1113H51.8443V25.2624H57.3367V28.3107H48.4816ZM64.3174 23.7982H68.0183L66.1909 19.3525L64.3174 23.7982ZM59.044 28.3107L66.2307 13.6702H66.443L73.4706 28.3107H69.9519L69.0597 26.2451H63.3424L62.4304 28.3107H59.044ZM74.3455 28.3107L77.2709 13.6502H77.5128L82.8292 22.8955L87.8435 13.6502H88.0955L91.0404 28.3107H87.8435L86.6494 21.8259L82.869 28.8322H82.6432L78.5842 21.7292L77.347 28.3107H74.3455ZM97.882 16.7185H97.4241V20.5091H98.0346C98.8836 20.5091 99.5302 20.3455 99.9779 20.0144C100.426 19.6833 100.648 19.2089 100.648 18.5905C100.648 17.9419 100.429 17.4706 99.988 17.1698C99.5467 16.8689 98.8439 16.7185 97.882 16.7185ZM94.0614 28.3107V14.1113H97.6862C98.8008 14.1113 99.6862 14.1914 100.339 14.3555C100.993 14.5191 101.573 14.7932 102.081 15.1775C102.604 15.5619 103.012 16.0434 103.301 16.6217C103.59 17.2 103.732 17.8116 103.732 18.4567C103.732 19.8941 103.225 21.0303 102.21 21.8728C101.199 22.7153 99.8219 23.1363 98.0841 23.1363C97.9053 23.1363 97.7691 23.1363 97.6765 23.1329C97.5869 23.1295 97.5006 23.1231 97.4241 23.1163V28.3107H94.0614ZM106.833 28.3107V14.1113H110.196V28.3107H106.833ZM118.271 16.6985H117.717V20.6293H118.427C119.276 20.6293 119.922 20.4554 120.37 20.1111C120.818 19.7671 121.04 19.269 121.04 18.6238C121.04 17.9454 120.825 17.4574 120.39 17.1531C119.956 16.8489 119.249 16.6985 118.271 16.6985ZM114.454 28.3107V14.1113H118.075C119.236 14.1113 120.135 14.1884 120.775 14.3419C121.415 14.4957 121.978 14.7497 122.473 15.1107C122.997 15.4886 123.405 15.9565 123.693 16.5147C123.982 17.073 124.124 17.6612 124.124 18.2795C124.124 19.1753 123.899 19.9577 123.448 20.6293C122.997 21.3013 122.347 21.826 121.498 22.2069L125.796 28.3107H121.955L118.195 22.7353H117.717V28.3107H114.454Z"
+                        fill="#2B2A29"></path>
+                    <path class="uz-svg"
+                        d="M128.25 26.8881C128.25 26.4232 128.409 26.032 128.728 25.7074C129.043 25.3831 129.428 25.2224 129.883 25.2224C130.351 25.2224 130.746 25.3831 131.071 25.704C131.393 26.0218 131.555 26.4164 131.555 26.8881C131.555 27.3462 131.393 27.7378 131.064 28.0655C130.736 28.3898 130.344 28.5538 129.883 28.5538C129.441 28.5538 129.06 28.3863 128.735 28.0552C128.413 27.7207 128.25 27.333 128.25 26.8881ZM137.568 14.1053V21.9115C137.568 23.1656 137.797 24.1055 138.255 24.7277C138.71 25.3532 139.403 25.6639 140.332 25.6639C141.225 25.6639 141.909 25.3729 142.377 24.7912C142.848 24.2125 143.083 23.3666 143.083 22.2561V14.1053H146.09V22.2561C146.09 24.3062 145.569 25.9081 144.523 27.0552C143.481 28.2023 142.031 28.7746 140.176 28.7746C138.301 28.7746 136.845 28.2057 135.803 27.0688C134.764 25.9315 134.243 24.333 134.243 22.2758V14.1053H137.568ZM147.556 28.313L154.565 17.0754H148.273L148.807 14.1053H160L153.008 25.303H160L159.466 28.313H147.556Z"
+                        fill="#2B2A29"></path>
+                    <path fill-rule="evenodd" clip-rule="evenodd"
+                        d="M25.3388 27.2459C26.1409 26.9908 26.4226 29.8293 28.1784 29.9805C31.8069 30.2927 34.5733 32.7234 35.8277 36.2177C36.0745 36.9056 35.605 37.1418 34.8467 37.4286C34.0686 37.7231 33.0553 37.9147 32.9556 37.2676C32.5629 34.4386 30.8874 31.5475 27.9777 31.1409C26.3494 30.9141 25.8113 33.6388 25.0587 33.2854C24.7137 33.1233 25.4056 32.181 25.5282 30.4753C25.6437 28.861 25.0459 27.3389 25.3388 27.2459Z"
+                        fill="#00582E"></path>
+                    <path fill-rule="evenodd" clip-rule="evenodd"
+                        d="M20.5587 0.749546C32.6335 3.59373 34.5288 15.0865 31.5554 21.8112C31.4804 22.0546 31.2648 22.1318 31.1001 22.0879C30.9539 22.049 30.796 21.8763 30.8432 21.6019C31.8033 15.6149 29.806 9.41662 23.885 7.10045C18.6649 5.05831 11.6354 7.20819 10.1541 13.2416C8.71484 19.1001 12.7083 23.8186 18.4991 24.7439C20.7226 25.0988 22.4859 25.1434 23.7673 26.885C25.2204 28.8603 25.2271 31.8583 23.4886 33.8169C21.8337 35.6825 19.4757 35.7453 17.1679 35.6342C6.33055 35.1114 -1.5457 25.8782 0.257706 14.7138C1.75886 5.42046 10.6713 -1.57947 20.5587 0.749546Z"
+                        fill="#E31E24"></path>
+                </svg>
+                <nav class="flex items-center gap-5">
+                    <ol class="header__list sm:block hidden  p-4 rounded">
+                        <li class="font-semibold">Kurs UZS</li>
+                        <li>USD 12 659.97</li>
+                        <li class="text-[#E31E24]">-16.06</li>
+                        <li>EUR 13 774.05</li>
+                        <li class="text-[#E31E24]">-9.87</li>
+                        <li>RUB 142.35</li>
+                        <li class="text-[#E31E24]">-0.57</li>
+                    </ol>
+                    <div class="relative">
+                        <input type="text" class="w-[120px] pl-10 pr-4 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:outline-none" placeholder="Search...">
+                        <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+                          <svg class="w-5 h-5 text-gray-400" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M12.9 14.32a8 8 0 111.414-1.415l4.387 4.387a1 1 0 11-1.415 1.415l-4.387-4.387zM8 14a6 6 0 100-12 6 6 0 000 12z" clip-rule="evenodd"></path>
+                          </svg>
+                        </div>
+                    </div>
+                    <div class="flex ">
+                        <button id="toggle-dark-mode" class=" p-2 rounded-full bg-gray-200 dark:bg-gray-800">
+                          <svg id="sun-icon" class="w-5 h-5 hidden dark:block" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 2v2m6.364 1.636l-1.414 1.414M20 12h-2m1.636 6.364l-1.414-1.414M12 20v2m-6.364-1.636l1.414-1.414M4 12H2m1.636-6.364l1.414 1.414M12 6.5a5.5 5.5 0 100 11 5.5 5.5 0 000-11z"></path>
+                          </svg>
+                          <svg id="moon-icon" class="w-5 h-5 block dark:hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12.79A9 9 0 1111.21 3a7 7 0 001.2 8.49A7 7 0 0021 12.79z"></path>
+                          </svg>
+                        </button>
+                    </div>
+                </nav>
+                
+            </div>
+            <hr class="mt-5">
+            <div class="container mx-auto flex items-center justify-between px-4 py-8">
+                <!-- Left section: Logo and weather info -->
+                <div class="flex items-center space-x-4">
+                    <!-- Weather Info -->
+                    <div class="flex items-center gap-3"> <!-- Hide on small screens -->
+                        <img src="https://www.qalampir.uz/new/img/svg/clear.svg" alt="img">
+                        <span>36°C Toshkent</span>
+                    </div>
+                </div>
+    
+                <!-- Middle section: Navigation Links with Dropdowns -->
+                <nav class="flex items-center hidden sm:flex space-x-4">
+                    <div class="relative group">
+                        <a href="https://www.qalampir.uz/uz/news/category/jamiyat" class="block py-2 px-4 text-gray-700 hover:text-red-500">Jamiyat</a>
+                        <div class="absolute left-0 mt-1 w-48 bg-white rounded-md shadow-lg hidden group-hover:block">
+                            <a href="https://www.qalampir.uz/uz/news/category/3-saxifa" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">3-Sahifa</a>
+                            
+                        </div>
+                    </div>
+                    <a href="https://www.qalampir.uz/uz/news/category/olam" class="text-gray-700 hover:text-red-500">Olam</a>
+                    <a href="https://www.qalampir.uz/uz/news/category/madaniyat-sanat" class="text-gray-700 hover:text-red-500">Madaniyat-san'at</a>
+                    <a href="https://www.qalampir.uz/uz/news/category/intervyu" class="text-gray-700 hover:text-red-500">Intervyu</a>
+                    <div class="relative group">
+                        <a href="https://www.qalampir.uz/uz/news/category/foydali" class="block py-2 px-4 text-gray-700 hover:text-red-500">Foydali</a>
+                        <div class="absolute left-0 mt-1 w-48 bg-white rounded-md shadow-lg hidden group-hover:block">
+                            <a href="https://www.qalampir.uz/uz/news/category/texnologiya" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Texnologiya</a>
+                            <a href="https://www.qalampir.uz/uz/news/category/salomatlik" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Salomatlik</a>
+                            <a href="https://www.qalampir.uz/uz/news/category/bu-qiziq" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Bu qiziq</a>
+                            <a href="https://www.qalampir.uz/uz/news/category/reklama" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Biznes</a>
+                        </div>
+                    </div>
+                    <a href="https://www.qalampir.uz/uz/news/category/sport" class="text-gray-700 hover:text-red-500">Sport</a>
+                    <a href="https://www.qalampir.uz/uz/news/category/tahlil" class="text-gray-700 hover:text-red-500">Tahlil</a>
+                </nav>
+    
+                <!-- Menu Icon for Small Screens -->
+                <div class="sm:hidden">
+                    <button id="menu-toggle" class="text-gray-700 hover:text-red-500 focus:outline-none">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+    
+        <!-- Mobile Menu -->
+            <div id="mobile-menu" class="sm:hidden hidden bg-gray-100">
+                <div class="relative group">
+                    <a href="#" class="block py-2 px-4 text-gray-700 hover:text-red-500">Jamiyat</a>
+                    <div class="absolute left-0 mt-1 w-48 bg-white rounded-md shadow-lg hidden group-hover:block">
+                        <a href="https://www.qalampir.uz/uz/news/category/3-saxifa" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">3-Sahifa</a>
+                        
+                    </div>
+                </div>
+                <a href="https://www.qalampir.uz/uz/news/category/olam" class="block py-2 px-4 text-gray-700 hover:text-red-500">Olam</a>
+                <a href="https://www.qalampir.uz/uz/news/category/madaniyat-sanat" class="block py-2 px-4 text-gray-700 hover:text-red-500">Madaniyat-san'at</a>
+                <a href="https://www.qalampir.uz/uz/news/category/intervyu" class="block py-2 px-4 text-gray-700 hover:text-red-500">Intervyu</a>
+                <div class="relative group">
+                    <a href="https://www.qalampir.uz/uz/news/category/foydali" class="block py-2 px-4 text-gray-700 hover:text-red-500">Foydali</a>
+                    <div class="absolute left-0 mt-1 w-48 bg-white rounded-md shadow-lg hidden group-hover:block">
+                        <a href="https://www.qalampir.uz/uz/news/category/texnologiya" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Texnologiya</a>
+                        <a href="https://www.qalampir.uz/uz/news/category/salomatlik" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Salomatlik</a>
+                        <a href="https://www.qalampir.uz/uz/news/category/bu-qiziq" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Bu qiziq</a>
+                        <a href="https://www.qalampir.uz/uz/news/category/reklama" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Biznes</a>
+                    </div>
+                </div>
+                <a href="https://www.qalampir.uz/uz/news/category/sport" class="block py-2 px-4 text-gray-700 hover:text-red-500">Sport</a>
+                <a href="https://www.qalampir.uz/uz/news/category/tahlil" class="block py-2 px-4 text-gray-700 hover:text-red-500">Tahlil</a>
+        </div>
+        </div>
+    </header>
+    <main>
+        <div class="container">
+            <section>
+                <div class="flex justify-between ">
+                    <div class="flex flex-wrap gap-y-5 flex-col">
+                        <div class="relative  max-w-lg px-5 md:px-0 md:" style="width: 600px;">
+                            <div class="carousel">
+                                <div class="carousel-item active">
+                                    <a href="https://www.qalampir.uz/uz/news/khoinga-chik-arilgan-rus-bokschilari-sport-dayzhesti-102551" target="_blank">
+                                        <img  src="https://ad-admin.qalampir.uz/uploads/RB/m_Qx7pjdF85vMlvbY5DirGJlUIw8weME.jpg" class="w-full rounded-lg" alt="Slide 1">
+                                    </a>
+                                </div>
+                                <div class="carousel-item">
+                                    <a href="https://www.qalampir.uz/uz/news/toshkentda-ayellarni-fo%D2%B3ishalik-uchun-turkiyaga-zhunatayetgan-shakhs-ushlandi-102549" target="_blank">
+                                        <img src="https://ad-admin.qalampir.uz/uploads/4q/m_pNuZJYRpVtTNtj3y7Wujj0iov4jzDe.jpg" class="w-full rounded-lg" alt="Slide 2">
+                                    </a>
+                                </div>
+                                <div class="carousel-item">
+                                    <a href="https://www.qalampir.uz/uz/news/islom-sakkizligi-davlatlari-gazo-ink-irozini-%D2%B3al-k-ilish-uchun-birgalikda-%D2%B3arakat-k-iladi-102545" target="_blank">
+                                        <img src="https://ad-admin.qalampir.uz/uploads/rW/m_FXqOXUFEVGS2mkTjDjaE8xXxzT5Nkm.jpg" class="w-full rounded-lg" alt="Slide 3">
+                                    </a>
+                                </div>
+                                <div class="carousel-item">
+                                    <a href="https://www.qalampir.uz/uz/news/surkhondareda-yt%D2%B3-ok-ibatida-nexia-2-rusumli-avtomashinada-yengin-sodir-buldi-102540" target="_blank">
+                                        <img src="https://ad-admin.qalampir.uz/uploads/X7/m_ixG9t1L1SoyQxLDIrSavcZP7BHyT6M.jpg" class="w-full rounded-lg" alt="Slide 4">
+                                    </a>
+                                </div>
+                                <div class="carousel-item">
+                                    <a href="https://www.qalampir.uz/uz/news/k-irgiziston-rossiya-tivga-nota-yubordi-102534" target="_blank">
+                                        <img src="https://ad-admin.qalampir.uz/uploads/QP/m_LYPt5iTyrMkcnjKo9vhdfR0U9I2LVI.jpg" class="w-full rounded-lg" alt="Slide 5">
+                                    </a>
+                                </div>
+                                <div class="carousel-item">
+                                    <a href="https://www.qalampir.uz/uz/news/blinken-yana-yak-in-shark-k-a-otlanyapti-102530" target="_blank">
+                                        <img src="https://ad-admin.qalampir.uz/uploads/Tv/m_0ocRKsBCausGe7KsdM68S94qIyjI63.jpg" class="w-full rounded-lg" alt="Slide 6">
+                                    </a>
+                                </div>
+                            </div>
+                    
+                            <div class="absolute top-2 left-2 flex space-x-2 ml-96">
+                                <button id="prev" class="bg-black bg-transparent text-white p-2 rounded-full">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
+                                    </svg>
+                                </button>
+                                <button id="next" class="bg-black bg-transparent text-white p-2 rounded-full">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="sm:block hidden">
+                            <a href="https://www.qalampir.uz/uz/news/islom-sakkizligi-davlatlari-gazo-ink-irozini-%D2%B3al-k-ilish-uchun-birgalikda-%D2%B3arakat-k-iladi-102545">
+                                <img class="w-[330px] h-[260px] rounded-lg" src="https://ad-admin.qalampir.uz/uploads/rW/m_FXqOXUFEVGS2mkTjDjaE8xXxzT5Nkm.jpg" alt="img">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="flex flex-col gap-y-3">
+                        <div class="sm:block hidden pr-5">
+                            <a href="https://www.qalampir.uz/uz/news/mirziyeev-va-erdugan-tor-doirada-muzokara-utkazdi-vileo-102470">
+                                <img src="https://ad-admin.qalampir.uz/uploads/42/m_07OLbcdTFHZKsaQeqzSQCSjdMh1Hcw.jpg" class="w-[330px] h-[220px] rounded-lg" alt="img">
+                            </a>
+                        </div>
+                        <div class="sm:block hidden pr-5">
+                            <a href="https://www.qalampir.uz/uz/news/ronalduning-mbappega-yezgan-izo%D2%B3i-izhtimoiy-tarmok-lar-rekordini-urnatdi-102488">
+                                <img src="https://ad-admin.qalampir.uz/uploads/xa/m_tqSQWCZ9NOjLiJ2X9GOVEvSxjQwVij.jpg" class="w-[330px] h-[220px] rounded-lg" alt="img">
+                            </a>
+                        </div>
+                        <div class="sm:block hidden pr-5">
+                            <a href="https://www.qalampir.uz/uz/news/yangilangan-rog-zephyrus-g16-uyinlardan-to-bitta-klikdan-boshlanadigan-izhodgacha-102448">
+                                <img src="https://ad-admin.qalampir.uz/uploads/5a/m_6wpPYSipmNB0ndpf3HRQrTChhgbPbW.jpg" class="w-[330px] h-[220px] rounded-lg" alt="img">
+                            </a>
+                        </div>
+                    </div>
+                    <div>
+                        <div  class="red-box overflow-y-scroll w-[350px] h-[685px] rounded-lg bg-[#FA0001]">
+                            <div>
+                                <div class="flex items-center justify-between px-5 py-4">
+                                    <div class="flex items-center">
+                                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQuDiqJwaNhEyyJ-XMYikzKwzesJ0w8YruYO2lX1Z797wlh9fA7" class="w-[40px] " alt="img">
+                                        <h2 class="text-white">Live</h2>
+                                    </div>
+                                    <div>
+                                        <h2 class="text-white">Barchasi</h2>
+                                    </div>
+                                </div>
+                                <div class="">
+                                    <div class="flex justify-center py-5">
+                                        <p class="main__text text-white">Chirchiq shahar ko‘p tarmoqli tibbiyot <br>
+                                            markazi bosh shifokorining davolash <br>
+                                            ishlari bo‘yicha o‘rinbosari Nizom <br>
+                                            Abdullayev xodimlarni haqorat qildi.</p>
+                                         
+                                    </div>
+                                    <hr class="mt-7">
+                                    <div class="flex justify-center py-5">
+                                        <p class="main__text text-white">Chirchiq shahar ko‘p tarmoqli tibbiyot <br>
+                                            markazi bosh shifokorining davolash <br>
+                                            ishlari bo‘yicha o‘rinbosari Nizom <br>
+                                            Abdullayev xodimlarni haqorat qildi.</p>
+                                         
+                                    </div>
+                                    <hr class="mt-7">
+                                    <div class="flex justify-center py-5">
+                                        <p class="main__text text-white">Chirchiq shahar ko‘p tarmoqli tibbiyot <br>
+                                            markazi bosh shifokorining davolash <br>
+                                            ishlari bo‘yicha o‘rinbosari Nizom <br>
+                                            Abdullayev xodimlarni haqorat qildi.</p>
+                                         
+                                    </div>
+                                    <hr class="mt-7">
+                                    <div class="flex justify-center py-5">
+                                        <p class="main__text text-white">Chirchiq shahar ko‘p tarmoqli tibbiyot <br>
+                                            markazi bosh shifokorining davolash <br>
+                                            ishlari bo‘yicha o‘rinbosari Nizom <br>
+                                            Abdullayev xodimlarni haqorat qildi.</p>
+                                         
+                                    </div>
+                                    <hr class="mt-7">
+                                    <div class="flex justify-center py-5">
+                                        <p class="main__text text-white">Chirchiq shahar ko‘p tarmoqli tibbiyot <br>
+                                            markazi bosh shifokorining davolash <br>
+                                            ishlari bo‘yicha o‘rinbosari Nizom <br>
+                                            Abdullayev xodimlarni haqorat qildi.</p>
+                                         
+                                    </div>
+                                    <hr class="mt-7">
+                                    <div class="flex justify-center py-5">
+                                        <p class="main__text text-white">Chirchiq shahar ko‘p tarmoqli tibbiyot <br>
+                                            markazi bosh shifokorining davolash <br>
+                                            ishlari bo‘yicha o‘rinbosari Nizom <br>
+                                            Abdullayev xodimlarni haqorat qildi.</p>
+                                         
+                                    </div>
+                                    <hr class="mt-7">
+                                    <div class="flex justify-center py-5">
+                                        <p class="main__text text-white">Chirchiq shahar ko‘p tarmoqli tibbiyot <br>
+                                            markazi bosh shifokorining davolash <br>
+                                            ishlari bo‘yicha o‘rinbosari Nizom <br>
+                                            Abdullayev xodimlarni haqorat qildi.</p>
+                                         
+                                    </div>
+                                    <hr class="mt-7">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section>
+                <div class="flex justify-between flex-wrap py-14 px-5">
+                    <div class="katta-box w-[900px] border border-solid rounded-xl py-6 px-4 border-gray-300">
+                        <div class="px-8 pt-4">
+                            <h1 class="text-[#E31E24] text-[20px]">So'nggi yangiliklar</h1>
+                        </div>
+                        <hr>
+                        <div class="flex flex-wrap justify-between px-8 py-5">
+                            <div class="flex items-center gap-3 py-5 hover:text-[#E31E24]">
+                                <a href="https://www.qalampir.uz/uz/news/k-ozogistonda-ichida-uzbekistonliklar-bulgan-avtomobil-yenib-ketdi-102559"><img class="w-[95px] rounded-lg" src="https://ad-admin.qalampir.uz/uploads/kI/thumb_T5bpVyYBLMqwIBSrJkrD4mY2cv3WFe.jpg" alt="img"></a>
+                                <a href="https://www.qalampir.uz/uz/news/k-ozogistonda-ichida-uzbekistonliklar-bulgan-avtomobil-yenib-ketdi-102559"><p>Qozog‘istonda ichida <br> o‘zbekistonliklar bo‘lgan avtomobil <br>yonib ketdi</p></a>
+                            </div>
+                            <div class="flex items-center gap-3 py-5 hover:text-[#E31E24]">
+                                <a href="https://www.qalampir.uz/uz/news/k-ozogistonda-ichida-uzbekistonliklar-bulgan-avtomobil-yenib-ketdi-102559"><img class="w-[95px] rounded-lg" src="https://ad-admin.qalampir.uz/uploads/zh/thumb_mIaBYCicvrfKifMJtltrOZokNu8M6x.jpg" alt="img"></a>
+                                <a href="https://www.qalampir.uz/uz/news/k-ozogistonda-ichida-uzbekistonliklar-bulgan-avtomobil-yenib-ketdi-102559"><p>Qozog‘istonda ichida <br> o‘zbekistonliklar bo‘lgan avtomobil <br>yonib ketdi</p></a>
+                            </div>
+                            <div class="flex items-center gap-3 py-5 hover:text-[#E31E24]">
+                                <a href="https://www.qalampir.uz/uz/news/k-ozogistonda-ichida-uzbekistonliklar-bulgan-avtomobil-yenib-ketdi-102559"><img class="w-[95px] rounded-lg" src="https://ad-admin.qalampir.uz/uploads/nE/thumb_oNpfaHmOFv3Fk2V6QfqM4MLOioNHr1.jpg" alt="img"></a>
+                                <a href="https://www.qalampir.uz/uz/news/k-ozogistonda-ichida-uzbekistonliklar-bulgan-avtomobil-yenib-ketdi-102559"><p>O‘zbekistonda AQSH vizasi uchun <br>suhbat belgilashning yangi tizimi <br>ishga tushadi</p></a>
+                            </div>
+                            <div class="flex items-center gap-3 py-5 hover:text-[#E31E24]">
+                                <a href="https://www.qalampir.uz/uz/news/k-ozogistonda-ichida-uzbekistonliklar-bulgan-avtomobil-yenib-ketdi-102559"><img class="w-[95px] rounded-lg" src="https://ad-admin.qalampir.uz/uploads/p6/thumb_hPHy6VG0fsjZwk2lV1JO6ntsSpqv9W.jpg" alt="img"></a>
+                                <a href="https://www.qalampir.uz/uz/news/k-ozogistonda-ichida-uzbekistonliklar-bulgan-avtomobil-yenib-ketdi-102559"><p>Qozog‘istonda ichida <br> o‘zbekistonliklar bo‘lgan avtomobil <br>yonib ketdi</p></a>
+                            </div>
+                            <div class="flex items-center gap-3 py-5 hover:text-[#E31E24]">
+                                <a href="https://www.qalampir.uz/uz/news/k-ozogistonda-ichida-uzbekistonliklar-bulgan-avtomobil-yenib-ketdi-102559"><img class="w-[95px] rounded-lg" src="https://ad-admin.qalampir.uz/uploads/Na/thumb_UjOrTqZS73NTWcEV2KhrGRU1Ru3LXG.jpg" alt="img"></a>
+                                <a href="https://www.qalampir.uz/uz/news/k-ozogistonda-ichida-uzbekistonliklar-bulgan-avtomobil-yenib-ketdi-102559"><p>O‘zbekiston tarixda birinchi marta <br> BMT Iqtisodiy va ijtimoiy <br> kengashiga saylandi</p></a>
+                            </div>
+                            <div class="flex items-center gap-3 py-5 hover:text-[#E31E24]">
+                                <a href="https://www.qalampir.uz/uz/news/k-ozogistonda-ichida-uzbekistonliklar-bulgan-avtomobil-yenib-ketdi-102559"><img class="w-[95px] rounded-lg" src="https://ad-admin.qalampir.uz/uploads/yp/thumb_FA9LSpFBa3RibOWt9AaSNb0EoRmsGa.jpg" alt="img"></a>
+                                <a href="https://www.qalampir.uz/uz/news/k-ozogistonda-ichida-uzbekistonliklar-bulgan-avtomobil-yenib-ketdi-102559"><p>Qozog‘istonda ichida <br> o‘zbekistonliklar bo‘lgan avtomobil <br>yonib ketdi</p></a>
+                            </div>
+                            <div class="flex items-center gap-3 py-5 hover:text-[#E31E24]">
+                                <a href="https://www.qalampir.uz/uz/news/k-ozogistonda-ichida-uzbekistonliklar-bulgan-avtomobil-yenib-ketdi-102559"><img class="w-[95px] rounded-lg" src="https://ad-admin.qalampir.uz/uploads/RB/thumb_Qx7pjdF85vMlvbY5DirGJlUIw8weME.jpg" alt="img"></a>
+                                <a href="https://www.qalampir.uz/uz/news/k-ozogistonda-ichida-uzbekistonliklar-bulgan-avtomobil-yenib-ketdi-102559"><p>Qozog‘istonda ichida <br> o‘zbekistonliklar bo‘lgan avtomobil <br>yonib ketdi</p></a>
+                            </div>
+                            <div class="flex items-center gap-3 py-5 hover:text-[#E31E24]">
+                                <a href="https://www.qalampir.uz/uz/news/k-ozogistonda-ichida-uzbekistonliklar-bulgan-avtomobil-yenib-ketdi-102559"><img class="w-[95px] rounded-lg" src="https://ad-admin.qalampir.uz/uploads/E8/thumb_OrOcUGlfG2kMFDjEfg10xaEt1AkFho.jpg" alt="img"></a>
+                                <a href="https://www.qalampir.uz/uz/news/k-ozogistonda-ichida-uzbekistonliklar-bulgan-avtomobil-yenib-ketdi-102559"><p>Qozog‘istonda ichida <br> o‘zbekistonliklar bo‘lgan avtomobil <br>yonib ketdi</p></a>
+                            </div>
+                            <div class="flex items-center gap-3 py-5 hover:text-[#E31E24]">
+                                <a href="https://www.qalampir.uz/uz/news/k-ozogistonda-ichida-uzbekistonliklar-bulgan-avtomobil-yenib-ketdi-102559"><img class="w-[95px] rounded-lg" src="https://ad-admin.qalampir.uz/uploads/Sm/thumb_wlh7ANZxP6cHNANzNF4CxOdlAGhpb0.jpg" alt="img"></a>
+                                <a href="https://www.qalampir.uz/uz/news/k-ozogistonda-ichida-uzbekistonliklar-bulgan-avtomobil-yenib-ketdi-102559"><p>Qozog‘istonda ichida <br> o‘zbekistonliklar bo‘lgan avtomobil <br>yonib ketdi</p></a>
+                            </div>
+                            <div class="flex items-center gap-3 py-5 hover:text-[#E31E24]">
+                                <a href="https://www.qalampir.uz/uz/news/k-ozogistonda-ichida-uzbekistonliklar-bulgan-avtomobil-yenib-ketdi-102559"><img class="w-[95px] rounded-lg" src="https://ad-admin.qalampir.uz/uploads/4q/thumb_pNuZJYRpVtTNtj3y7Wujj0iov4jzDe.jpg" alt="img"></a>
+                                <a href="https://www.qalampir.uz/uz/news/k-ozogistonda-ichida-uzbekistonliklar-bulgan-avtomobil-yenib-ketdi-102559"><p>Qozog‘istonda ichida <br> o‘zbekistonliklar bo‘lgan avtomobil <br>yonib ketdi</p></a>
+                            </div>
+                            <div class="flex items-center gap-3 py-5 hover:text-[#E31E24]">
+                                <a href="https://www.qalampir.uz/uz/news/k-ozogistonda-ichida-uzbekistonliklar-bulgan-avtomobil-yenib-ketdi-102559"><img class="w-[95px] rounded-lg" src="https://ad-admin.qalampir.uz/uploads/Aw/thumb_DJjUZnol0OavOjBy3OwccvySvuy7Jy.jpg" alt="img"></a>
+                                <a href="https://www.qalampir.uz/uz/news/k-ozogistonda-ichida-uzbekistonliklar-bulgan-avtomobil-yenib-ketdi-102559"><p>Qozog‘istonda ichida <br> o‘zbekistonliklar bo‘lgan avtomobil <br>yonib ketdi</p></a>
+                            </div>
+                            <div class="flex items-center gap-3 py-5 hover:text-[#E31E24]">
+                                <a href="https://www.qalampir.uz/uz/news/k-ozogistonda-ichida-uzbekistonliklar-bulgan-avtomobil-yenib-ketdi-102559"><img class="w-[95px] rounded-lg" src="https://ad-admin.qalampir.uz/uploads/N8/thumb_AtZy5QjHJTMEEJcI5jlB6ZUUMoiWqv.jpg" alt="img"></a>
+                                <a href="https://www.qalampir.uz/uz/news/k-ozogistonda-ichida-uzbekistonliklar-bulgan-avtomobil-yenib-ketdi-102559"><p>Qozog‘istonda ichida <br> o‘zbekistonliklar bo‘lgan avtomobil <br>yonib ketdi</p></a>
+                            </div>
+                            <div class="flex items-center gap-3 py-5 hover:text-[#E31E24]">
+                                <a href="https://www.qalampir.uz/uz/news/k-ozogistonda-ichida-uzbekistonliklar-bulgan-avtomobil-yenib-ketdi-102559"><img class="w-[95px] rounded-lg" src="https://ad-admin.qalampir.uz/uploads/rW/thumb_FXqOXUFEVGS2mkTjDjaE8xXxzT5Nkm.jpg" alt="img"></a>
+                                <a href="https://www.qalampir.uz/uz/news/k-ozogistonda-ichida-uzbekistonliklar-bulgan-avtomobil-yenib-ketdi-102559"><p>Qozog‘istonda ichida <br> o‘zbekistonliklar bo‘lgan avtomobil <br>yonib ketdi</p></a>
+                            </div>
+                            <div class="flex items-center gap-3 py-5 hover:text-[#E31E24]">
+                                <a href="https://www.qalampir.uz/uz/news/k-ozogistonda-ichida-uzbekistonliklar-bulgan-avtomobil-yenib-ketdi-102559"><img class="w-[95px] rounded-lg" src="https://ad-admin.qalampir.uz/uploads/2L/thumb_M3HdSWDC59UNht04XfONueXGQ1HQV9.jpg" alt="img"></a>
+                                <a href="https://www.qalampir.uz/uz/news/k-ozogistonda-ichida-uzbekistonliklar-bulgan-avtomobil-yenib-ketdi-102559"><p>Qozog‘istonda ichida <br> o‘zbekistonliklar bo‘lgan avtomobil <br>yonib ketdi</p></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="kichik-box w-[400px] h-[920px]   border border-solid rounded-xl py-6 px-4 border-gray-300">
+                        <div class="px-8 pt-4">
+                            <h1 class="text-[#E31E24] text-[20px]">Trentagilar</h1>
+                        </div>
+                        <hr>
+                        <div class="px-9 mt-5">
+                            <div class="flex items-center gap-3 py-5 hover:text-[#E31E24]">
+                                <a href="https://www.qalampir.uz/uz/news/k-ozogistonda-ichida-uzbekistonliklar-bulgan-avtomobil-yenib-ketdi-102559"><img class="w-[120px] rounded-lg" src="https://ad-admin.qalampir.uz/uploads/xa/thumb_tqSQWCZ9NOjLiJ2X9GOVEvSxjQwVij.jpg" alt="img"></a>
+                                <a href="https://www.qalampir.uz/uz/news/k-ozogistonda-ichida-uzbekistonliklar-bulgan-avtomobil-yenib-ketdi-102559"><p>Xorazmda 11 yoshli bolani devor bosib qoldi</p></a>
+                            </div>
+                            <div class="flex items-center gap-3 py-5 hover:text-[#E31E24]">
+                                <a href="https://www.qalampir.uz/uz/news/k-ozogistonda-ichida-uzbekistonliklar-bulgan-avtomobil-yenib-ketdi-102559"><img class="w-[120px] rounded-lg" src="https://ad-admin.qalampir.uz/uploads/QP/thumb_LYPt5iTyrMkcnjKo9vhdfR0U9I2LVI.jpg" alt="img"></a>
+                                <a href="https://www.qalampir.uz/uz/news/k-ozogistonda-ichida-uzbekistonliklar-bulgan-avtomobil-yenib-ketdi-102559"><p>Xorazmda 11 yoshli bolani devor bosib qoldi</p></a>
+                            </div>
+                            <div class="flex items-center gap-3 py-5 hover:text-[#E31E24]">
+                                <a href="https://www.qalampir.uz/uz/news/k-ozogistonda-ichida-uzbekistonliklar-bulgan-avtomobil-yenib-ketdi-102559"><img class="w-[120px] rounded-lg" src="https://ad-admin.qalampir.uz/uploads/Sm/thumb_wlh7ANZxP6cHNANzNF4CxOdlAGhpb0.jpg" alt="img"></a>
+                                <a href="https://www.qalampir.uz/uz/news/k-ozogistonda-ichida-uzbekistonliklar-bulgan-avtomobil-yenib-ketdi-102559"><p>Xorazmda 11 yoshli bolani devor bosib qoldi</p></a>
+                            </div>
+                            <div class="flex items-center gap-3 py-5 hover:text-[#E31E24]">
+                                <a href="https://www.qalampir.uz/uz/news/k-ozogistonda-ichida-uzbekistonliklar-bulgan-avtomobil-yenib-ketdi-102559"><img class="w-[120px] rounded-lg" src="https://ad-admin.qalampir.uz/uploads/1Y/thumb_IBxJa4kXvTfWJkEwonEfEAbVcmeLvW.jpg" alt="img"></a>
+                                <a href="https://www.qalampir.uz/uz/news/k-ozogistonda-ichida-uzbekistonliklar-bulgan-avtomobil-yenib-ketdi-102559"><p>Xorazmda 11 yoshli bolani devor bosib qoldi</p></a>
+                            </div>
+                            <div class="flex items-center gap-3 py-5 hover:text-[#E31E24]">
+                                <a href="https://www.qalampir.uz/uz/news/k-ozogistonda-ichida-uzbekistonliklar-bulgan-avtomobil-yenib-ketdi-102559"><img class="w-[120px] rounded-lg" src="https://ad-admin.qalampir.uz/uploads/ZL/thumb_oartIu3p9A6wODnXCDrvpua6A3dDv3.jpg" alt="img"></a>
+                                <a href="https://www.qalampir.uz/uz/news/k-ozogistonda-ichida-uzbekistonliklar-bulgan-avtomobil-yenib-ketdi-102559"><p>Xorazmda 11 yoshli bolani devor bosib qoldi</p></a>
+                            </div>
+                            <div class="flex items-center gap-3 py-5 hover:text-[#E31E24]">
+                                <a href="https://www.qalampir.uz/uz/news/k-ozogistonda-ichida-uzbekistonliklar-bulgan-avtomobil-yenib-ketdi-102559"><img class="w-[120px] rounded-lg" src="https://ad-admin.qalampir.uz/uploads/26/thumb_4iqsqMIZvPzizkhmEFTfVx3UCvtnNl.jpg" alt="img"></a>
+                                <a href="https://www.qalampir.uz/uz/news/k-ozogistonda-ichida-uzbekistonliklar-bulgan-avtomobil-yenib-ketdi-102559"><p>Xorazmda 11 yoshli bolani devor bosib qoldi</p></a>
+                            </div>
+                            <div class="flex items-center gap-3 py-5 hover:text-[#E31E24]">
+                                <a href="https://www.qalampir.uz/uz/news/k-ozogistonda-ichida-uzbekistonliklar-bulgan-avtomobil-yenib-ketdi-102559"><img class="w-[120px] rounded-lg" src="https://ad-admin.qalampir.uz/uploads/BD/thumb_5qodDbyzRhbOqnCK33eaR0dY0c8uZA.jpg" alt="img"></a>
+                                <a href="https://www.qalampir.uz/uz/news/k-ozogistonda-ichida-uzbekistonliklar-bulgan-avtomobil-yenib-ketdi-102559"><p>Xorazmda 11 yoshli bolani devor bosib qoldi</p></a>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section>
+                <div class="bg-red-600 mt-10 py-8 px-5">
+                    <div class="max-w-7xl mx-auto p-4">
+                        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 gap-y-8">
+                            <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                                <img src="https://ad-admin.qalampir.uz/uploads/4h/s_IVxUzxGOKCOdBvgqjyVHVRqB0ZLoBF.jpg" alt="Chery Tiggo 7 Pro" class="w-full h-48 object-cover">
+                                <div class="p-4">
+                                    <h2 class="text-lg font-semibold mb-2">Chery Tiggo 7 Pro sohiblari uchun Zomindagi unutilmas dam olish kunlari</h2>
+                                </div>
+                            </div>
+                            <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                                <img src="https://ad-admin.qalampir.uz/uploads/wO/s_46SQDs36J1u7vJOdIQLmnUaxSxTRCG.jpg" alt="Huawei Nova 12s" class="w-full h-48 object-cover">
+                                <div class="p-4">
+                                    <h2 class="text-lg font-semibold mb-2">Yarim soatda 100% quvvatlanadigan smartfon chiqarildi</h2>
+                                </div>
+                            </div>
+                            <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                                <img src="https://ad-admin.qalampir.uz/uploads/jn/s_c6GVlDItEpKp7J6cbFMr5iKfBoEGhn.jpg" alt="Kia Sonet" class="w-full h-48 object-cover">
+                                <div class="p-4">
+                                    <h2 class="text-lg font-semibold mb-2">Kia Sonet'ning ilk topshirilishlari: yangi yetakchilar davri</h2>
+                                </div>
+                            </div>
+                            <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                                <img src="https://cdn.beta.qalampir.uz/uploads/g3/f_fkHkBO6ELYsQFYt6wiDzPu1kXgB6Gh.jpg" alt="Procter & Gamble" class="w-full h-48 object-cover">
+                                <div class="p-4">
+                                    <h2  class="text-lg font-semibold mb-2">Procter & Gamble Oʻzbekiston Olimpiya qoʻmitasi bilan hamkorlik shartnomasini imzoladi</h2>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section>
+                <div class="quticha w-full border border-solid mt-14 py-7 rounded-xl px-4 border-gray-300">
+                    <div class="">
+                        <div class="flex justify-between items-center border-b border-red-500 pb-2 mb-4">
+                            <h2 class="text-xl font-semibold text-red-500">Video yangiliklar</h2>
+                            <a href="https://www.qalampir.uz/uz/video" class="text-red-500">Barchasi &rarr;</a>
+                        </div>
+                
+                        <div class=" custom-scrollbar overflow-x-auto">
+                            <div class="video-yangiliklar flex justify-between flex-wrap space-x-6 px-5">
+                                <div class="video-link relative w-96 flex-shrink-0">
+                                    <img src="https://cdn.beta.qalampir.uz/uploads/M5/f_UcDxwdV3BURI8c9ds35bk1bVOpwAy8.jpg" alt="Video Thumbnail" class="w-full h-auto rounded-lg">
+                                    <a href="https://youtube.com/shorts/dQmZKooUacc?si=Y7A_7t7tKfeT2CR9" class="absolute inset-0 flex items-center justify-center">
+                                        <span class="bg-white text-gray-800 rounded-full p-2">
+                                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-4.586-2.648A1 1 0 009 9.648v5.704a1 1 0 001.166.98l4.586-2.648a1 1 0 000-1.716z"></path>
+                                            </svg>
+                                        </span>
+                                    </a>
+                                    <div class="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black to-transparent p-4 rounded-b-lg">
+                                        <p class="text-white text-sm">Bozorda IIB xodimlari bilan janjallashgan sotuvchi ayol jarimaga tortildi (video)</p>
+                                        <p class="text-gray-400 text-xs mt-2">08 Iyun</p>
+                                    </div>
+                                </div>
+                
+                                <div class="relative w-96 flex-shrink-0">
+                                    <img src="https://cdn.beta.qalampir.uz/uploads/M5/f_UcDxwdV3BURI8c9ds35bk1bVOpwAy8.jpg" alt="Video Thumbnail" class="w-full h-auto rounded-lg">
+                                    <a href="https://youtube.com/shorts/dQmZKooUacc?si=Y7A_7t7tKfeT2CR9" class="absolute inset-0 flex items-center justify-center">
+                                        <span class="bg-white text-gray-800 rounded-full p-2">
+                                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-4.586-2.648A1 1 0 009 9.648v5.704a1 1 0 001.166.98l4.586-2.648a1 1 0 000-1.716z"></path>
+                                            </svg>
+                                        </span>
+                                    </a>
+                                    <div class="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black to-transparent p-4 rounded-b-lg">
+                                        <p class="text-white text-sm">Qonun "nozik" amaldorlar uchun ishlaydimi?</p>
+                                        <p class="text-gray-400 text-xs mt-2">07 Iyun</p>
+                                    </div>
+                                </div>
+                
+                                <div class="relative w-96 flex-shrink-0">
+                                    <img src="https://cdn.beta.qalampir.uz/uploads/M5/f_UcDxwdV3BURI8c9ds35bk1bVOpwAy8.jpg" alt="Video Thumbnail" class="w-full h-auto rounded-lg">
+                                    <a href="https://youtube.com/shorts/dQmZKooUacc?si=Y7A_7t7tKfeT2CR9" class="absolute inset-0 flex items-center justify-center">
+                                        <span class="bg-white text-gray-800 rounded-full p-2">
+                                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-4.586-2.648A1 1 0 009 9.648v5.704a1 1 0 001.166.98l4.586-2.648a1 1 0 000-1.716z"></path>
+                                            </svg>
+                                        </span>
+                                    </a>
+                                    <div class="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black to-transparent p-4 rounded-b-lg">
+                                        <p class="text-white text-sm">Mirziyoyev va Erdo'g'an tor doirada muzokara o'tkazdi (video)</p>
+                                        <p class="text-gray-400 text-xs mt-2">06 Iyun</p>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        </div>
+                    </div>
+                    <div class="py-10">
+                        <div class="flex justify-between flex-wrap p-7 gap-y-10">
+                            <div class="flex items-center gap-5 w-[380px] hover:text-red-500">
+                                <a href=""><img class="w-[200px] rounded-lg" src="https://ad-admin.qalampir.uz/uploads/M5/thumb_UcDxwdV3BURI8c9ds35bk1bVOpwAy8.jpg" alt="img"></a>
+                                <a href=""><p>Mirziyoyev Anqaradagi Prezident saroyida rasmiy kutib olindi</p></a>
+                            </div>
+                            <div class="flex items-center gap-5 w-[380px] hover:text-red-500">
+                                <a href=""><img class="w-[200px] rounded-lg" src="https://ad-admin.qalampir.uz/uploads/hQ/thumb_x1aVPle2pFZHfnPrP2Nqzz3v9v3j0a.jpg" alt="img"></a>
+                                <a href=""><p>Mirziyoyev Anqaradagi Prezident saroyida rasmiy kutib olindi</p></a>
+                            </div>
+                            <div class="flex items-center gap-5 w-[380px] hover:text-red-500">
+                                <a href=""><img class="w-[200px] rounded-lg" src="https://ad-admin.qalampir.uz/uploads/Ug/thumb_CkxFNKUfX9UNxJIREJau3nFE2sJfVe.jpg" alt="img"></a>
+                                <a href=""><p>Mirziyoyev Anqaradagi Prezident saroyida rasmiy kutib olindi</p></a>
+                            </div> 
+                            <div class="flex items-center gap-5 w-[380px] hover:text-red-500">
+                                <a href=""><img class="w-[200px] rounded-lg" src="https://ad-admin.qalampir.uz/uploads/th/thumb_nh7ddkzyQ8hEsbRifoeDQdq3WDdjQM.jpg" alt="img"></a>
+                                <a href=""><p>Mirziyoyev Anqaradagi Prezident saroyida rasmiy kutib olindi</p></a>
+                            </div>
+                            <div class="flex items-center gap-5 w-[380px] hover:text-red-500">
+                                <a href=""><img class="w-[200px] rounded-lg" src="https://ad-admin.qalampir.uz/uploads/jv/thumb_4RpUnhZJd3OiTkKPEnggvsWzaKc0aB.jpg" alt="img"></a>
+                                <a href=""><p>Mirziyoyev Anqaradagi Prezident saroyida rasmiy kutib olindi</p></a>
+                            </div>
+                            <div class="flex items-center gap-5 w-[380px] hover:text-red-500">
+                                <a href=""><img class="w-[200px] rounded-lg" src="https://ad-admin.qalampir.uz/uploads/pX/thumb_e344Gkktd4I5x1KmhH5ox8MoI3mxjR.jpg" alt="img"></a>
+                                <a href=""><p>Mirziyoyev Anqaradagi Prezident saroyida rasmiy kutib olindi</p></a>
+                            </div> 
+                            <div class="flex items-center gap-5 w-[380px] hover:text-red-500">
+                                <a href=""><img class="w-[200px] rounded-lg" src="https://ad-admin.qalampir.uz/uploads/mJ/thumb_1pTAfQDoRVriwlJc7nUSuqQygwiaFK.jpg" alt="img"></a>
+                                <a href=""><p>Mirziyoyev Anqaradagi Prezident saroyida rasmiy kutib olindi</p></a>
+                            </div>
+                            <div class="flex items-center gap-5 w-[380px] hover:text-red-500">
+                                <a href=""><img class="w-[200px] rounded-lg" src="https://ad-admin.qalampir.uz/uploads/vo/thumb_iFyBnv7cw3YEzD8QwN4T0EAVlEua2f.jpg" alt="img"></a>
+                                <a href=""> <p>Mirziyoyev Anqaradagi Prezident saroyida rasmiy kutib olindi</p></a>
+                            </div>
+                            <div class="flex items-center gap-5 w-[380px] hover:text-red-500">
+                                <a href=""><img class="w-[200px] rounded-lg" src="https://ad-admin.qalampir.uz/uploads/lA/thumb_fwC98wEOPFimmE2AN12YKDULpKEEKq.jpg" alt="img"></a>
+                                <a href=""><p>Mirziyoyev Anqaradagi Prezident saroyida rasmiy kutib olindi</p></a>
+                            </div> 
+                        </div>
+                        
+                    </div>
+                </div>
+            </section>
+            <section>
+                <div>
+                    <div class="flex flex-wrap justify-between gap">
+                        <!-- First Section -->
+                        <div class="jamiyat border border-solid mt-14 py-7 rounded-xl px-6 border-gray-300 mb-8">
+                            <div class="flex justify-between items-center border-b border-red-500 pb-2 mb-4">
+                                <h2 class="text-xl font-semibold text-red-500">Jamiyat</h2>
+                                <a href="https://www.qalampir.uz/uz/news/category/jamiyat" class="text-red-500">Barchasi &rarr;</a>
+                            </div>
+                            <div class="space-y-4">
+                                <div class="flex space-x-4">
+                                    <img src="https://ad-admin.qalampir.uz/uploads/nl/m_tIEWON3hjiuymNWZDJY4pTRboDi6TL.jpg" alt="Image" class="w-32 h-24 object-cover rounded-lg">
+                                    <div>
+                                        <p class="text-gray-800 font-semibold">Qozog'istonda ichida o'zbekistonliklar bo'lgan avtomobil <br> yonib 
+                                             ketdi</p>
+                                        <div class="flex items-center space-x-2 text-gray-500 text-sm mt-2">
+                                            <span>&#128065; 8912</span>
+                                            <span>09 Iyun</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="flex space-x-4">
+                                    <img src="https://ad-admin.qalampir.uz/uploads/NQ/m_AyJ5WdZntzAy2qQLsCF4S4NnwnYzul.jpg" alt="Image" class="w-32 h-24 object-cover rounded-lg">
+                                    <div>
+                                        <p class="text-gray-800 font-semibold">Xorazmda 11 yoshli bolani devor bosib qoldi</p>
+                                        <div class="flex items-center space-x-2 text-gray-500 text-sm mt-2">
+                                            <span>&#128065; 10843</span>
+                                            <span>08 Iyun</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="flex space-x-4">
+                                    <img src="https://ad-admin.qalampir.uz/uploads/eS/m_Hd6jgdZeKDfAWQ5MZQIYKfOtseID2m.jpg" alt="Image" class="w-32 h-24 object-cover rounded-lg">
+                                    <div>
+                                        <p class="text-gray-800 font-semibold">Xorazmda 11 yoshli bolani devor bosib qoldi</p>
+                                        <div class="flex items-center space-x-2 text-gray-500 text-sm mt-2">
+                                            <span>&#128065; 9850</span>
+                                            <span>08 Iyun</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="flex space-x-4">
+                                    <img src="https://ad-admin.qalampir.uz/uploads/IK/m_PIIWHCTuZb8zUxQO1JwUoWSKdGvId4.jpg" alt="Image" class="w-32 h-24 object-cover rounded-lg">
+                                    <div>
+                                        <p class="text-gray-800 font-semibold">Xorazmda 11 yoshli bolani devor bosib qoldi</p>
+                                        <div class="flex items-center space-x-2 text-gray-500 text-sm mt-2">
+                                            <span>&#128065; 9850</span>
+                                            <span>08 Iyun</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="flex space-x-4">
+                                    <img src="https://ad-admin.qalampir.uz/uploads/NQ/m_AyJ5WdZntzAy2qQLsCF4S4NnwnYzul.jpg" alt="Image" class="w-32 h-24 object-cover rounded-lg">
+                                    <div>
+                                        <p class="text-gray-800 font-semibold">Xorazmda 11 yoshli bolani devor bosib qoldi</p>
+                                        <div class="flex items-center space-x-2 text-gray-500 text-sm mt-2">
+                                            <span>&#128065; 9850</span>
+                                            <span>08 Iyun</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="flex space-x-4">
+                                    <img src="https://ad-admin.qalampir.uz/uploads/NQ/m_AyJ5WdZntzAy2qQLsCF4S4NnwnYzul.jpg" alt="Image" class="w-32 h-24 object-cover rounded-lg">
+                                    <div>
+                                        <p class="text-gray-800 font-semibold">Xorazmda 11 yoshli bolani devor bosib qoldi</p>
+                                        <div class="flex items-center space-x-2 text-gray-500 text-sm mt-2">
+                                            <span>&#128065; 9850</span>
+                                            <span>08 Iyun</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                
+                        <!-- Second Section -->
+                        <div class="olam border h-[765px] border-solid mt-14 py-7 rounded-xl px-6 border-gray-300">
+                            <div class="flex justify-between items-center border-b border-red-500 pb-2 mb-4">
+                                <h2 class="text-xl font-semibold text-red-500">Olam</h2>
+                                <a href="https://www.qalampir.uz/uz/news/category/olam" class="text-red-500">Barchasi &rarr;</a>
+                            </div>
+                            <div class="space-y-4">
+                                <div class="flex space-x-4">
+                                    <img src="https://ad-admin.qalampir.uz/uploads/xv/m_VIWAQaISfFpM9lMpL6zbeGydhUq8Ae.jpg" alt="Image" class="w-32 h-24 object-cover rounded-lg">
+                                    <div>
+                                        <p class="text-gray-800 font-semibold">Qirg'izistonda ham Qurbon hayiti kuni e'lon qilindi</p>
+                                        <div class="flex items-center space-x-2 text-gray-500 text-sm mt-2">
+                                            <span>&#128065; 13025</span>
+                                            <span>09 Iyun</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="flex space-x-4">
+                                    <img src="https://ad-admin.qalampir.uz/uploads/6E/m_iz8Ip0Vxtw6eR3fC8Jp3bD51to7ne3.jpg" alt="Image" class="w-32 h-24 object-cover rounded-lg">
+                                    <div>
+                                        <p class="text-gray-800 font-semibold">Fransiya va AQSH Eronga bosim o'tkazadi - Makron</p>
+                                        <div class="flex items-center space-x-2 text-gray-500 text-sm mt-2">
+                                            <span>&#128065; 6925</span>
+                                            <span>08 Iyun</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="flex space-x-4">
+                                    <img src="https://ad-admin.qalampir.uz/uploads/E2/m_jYR4SKRAdXfvifrLYUwEajGQ90AN6E.jpg" alt="Image" class="w-32 h-24 object-cover rounded-lg">
+                                    <div>
+                                        <p class="text-gray-800 font-semibold">NATO Ukraina bo'yicha maxsus vakil lavozimini yaratishni rejalashtirmoqda</p>
+                                        <div class="flex items-center space-x-2 text-gray-500 text-sm mt-2">
+                                            <span>&#128065; 2724</span>
+                                            <span>08 Iyun</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="flex space-x-4">
+                                    <img src="https://ad-admin.qalampir.uz/uploads/wg/m_cPAKEbrRx74YANRCzzWedwUzLBCY5z.jpg" alt="Image" class="w-32 h-24 object-cover rounded-lg">
+                                    <div>
+                                        <p class="text-gray-800 font-semibold">NATO Ukraina bo'yicha maxsus vakil lavozimini yaratishni rejalashtirmoqda</p>
+                                        <div class="flex items-center space-x-2 text-gray-500 text-sm mt-2">
+                                            <span>&#128065; 2724</span>
+                                            <span>08 Iyun</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="flex space-x-4">
+                                    <img src="https://ad-admin.qalampir.uz/uploads/wg/m_cPAKEbrRx74YANRCzzWedwUzLBCY5z.jpg" alt="Image" class="w-32 h-24 object-cover rounded-lg">
+                                    <div>
+                                        <p class="text-gray-800 font-semibold">NATO Ukraina bo'yicha maxsus vakil lavozimini yaratishni rejalashtirmoqda</p>
+                                        <div class="flex items-center space-x-2 text-gray-500 text-sm mt-2">
+                                            <span>&#128065; 2724</span>
+                                            <span>08 Iyun</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="flex space-x-4">
+                                    <img src="https://ad-admin.qalampir.uz/uploads/Sm/m_wlh7ANZxP6cHNANzNF4CxOdlAGhpb0.jpg" alt="Image" class="w-32 h-24 object-cover rounded-lg">
+                                    <div>
+                                        <p class="text-gray-800 font-semibold">NATO Ukraina bo'yicha maxsus vakil lavozimini yaratishni rejalashtirmoqda</p>
+                                        <div class="flex items-center space-x-2 text-gray-500 text-sm mt-2">
+                                            <span>&#128065; 2724</span>
+                                            <span>08 Iyun</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section>
+                <div>
+                    <div class="flex flex-wrap justify-between gap">
+                        <!-- First Section -->
+                        <div class="jamiyat border border-solid mt-10 py-7 rounded-xl px-6 border-gray-300 mb-8">
+                            <div class="flex justify-between items-center border-b border-red-500 pb-2 mb-4">
+                                <h2 class="text-[20px] font-semibold text-red-500">Interviyu</h2>
+                                <a href="https://www.qalampir.uz/uz/news/category/intervyu" class="text-red-500">Barchasi &rarr;</a>
+                            </div>
+                            <div class="space-y-4">
+                                <div class="flex space-x-4">
+                                    <img src="https://ad-admin.qalampir.uz/uploads/kI/m_T5bpVyYBLMqwIBSrJkrD4mY2cv3WFe.jpg" alt="Image" class="w-32 h-24 object-cover rounded-lg">
+                                    <div>
+                                        <p class="text-gray-800 font-semibold">Qozog'istonda ichida o'zbekistonliklar bo'lgan avtomobil <br> yonib 
+                                             ketdi</p>
+                                        <div class="flex items-center space-x-2 text-gray-500 text-sm mt-2">
+                                            <span>&#128065; 8912</span>
+                                            <span>09 Iyun</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="flex space-x-4">
+                                    <img src="https://ad-admin.qalampir.uz/uploads/kI/m_T5bpVyYBLMqwIBSrJkrD4mY2cv3WFe.jpg" alt="Image" class="w-32 h-24 object-cover rounded-lg">
+                                    <div>
+                                        <p class="text-gray-800 font-semibold">Xorazmda 11 yoshli bolani devor bosib qoldi</p>
+                                        <div class="flex items-center space-x-2 text-gray-500 text-sm mt-2">
+                                            <span>&#128065; 10843</span>
+                                            <span>08 Iyun</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="flex space-x-4">
+                                    <img src="https://ad-admin.qalampir.uz/uploads/p6/m_hPHy6VG0fsjZwk2lV1JO6ntsSpqv9W.jpg" alt="Image" class="w-32 h-24 object-cover rounded-lg">
+                                    <div>
+                                        <p class="text-gray-800 font-semibold">Xorazmda 11 yoshli bolani devor bosib qoldi</p>
+                                        <div class="flex items-center space-x-2 text-gray-500 text-sm mt-2">
+                                            <span>&#128065; 9850</span>
+                                            <span>08 Iyun</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="flex space-x-4">
+                                    <img src="https://ad-admin.qalampir.uz/uploads/p6/m_hPHy6VG0fsjZwk2lV1JO6ntsSpqv9W.jpg" alt="Image" class="w-32 h-24 object-cover rounded-lg">
+                                    <div>
+                                        <p class="text-gray-800 font-semibold">Xorazmda 11 yoshli bolani devor bosib qoldi</p>
+                                        <div class="flex items-center space-x-2 text-gray-500 text-sm mt-2">
+                                            <span>&#128065; 9850</span>
+                                            <span>08 Iyun</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="flex space-x-4">
+                                    <img src="https://ad-admin.qalampir.uz/uploads/p6/m_hPHy6VG0fsjZwk2lV1JO6ntsSpqv9W.jpg" alt="Image" class="w-32 h-24 object-cover rounded-lg">
+                                    <div>
+                                        <p class="text-gray-800 font-semibold">Xorazmda 11 yoshli bolani devor bosib qoldi</p>
+                                        <div class="flex items-center space-x-2 text-gray-500 text-sm mt-2">
+                                            <span>&#128065; 9850</span>
+                                            <span>08 Iyun</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="flex space-x-4">
+                                    <img src="https://ad-admin.qalampir.uz/uploads/p6/m_hPHy6VG0fsjZwk2lV1JO6ntsSpqv9W.jpg" alt="Image" class="w-32 h-24 object-cover rounded-lg">
+                                    <div>
+                                        <p class="text-gray-800 font-semibold">Xorazmda 11 yoshli bolani devor bosib qoldi</p>
+                                        <div class="flex items-center space-x-2 text-gray-500 text-sm mt-2">
+                                            <span>&#128065; 9850</span>
+                                            <span>08 Iyun</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                
+                        <!-- Second Section -->
+                        <div class="olam h-[765px] border border-solid mt-10 py-7 rounded-xl px-6 border-gray-300">
+                            <div class="flex justify-between items-center border-b border-red-500 pb-2 mb-4">
+                                <h2 class="text-[20px] font-semibold text-red-500">Tahlil</h2>
+                                <a href="https://www.qalampir.uz/uz/news/category/tahlil" class="text-red-500">Barchasi &rarr;</a>
+                            </div>
+                            <div class="space-y-4">
+                                <div class="flex space-x-4">
+                                    <img src="https://cdn.beta.qalampir.uz/uploads/M5/f_UcDxwdV3BURI8c9ds35bk1bVOpwAy8.jpg" alt="Image" class="w-32 h-24 object-cover rounded-lg">
+                                    <div>
+                                        <p class="text-gray-800 font-semibold">Qirg'izistonda ham Qurbon hayiti kuni e'lon qilindi</p>
+                                        <div class="flex items-center space-x-2 text-gray-500 text-sm mt-2">
+                                            <span>&#128065; 13025</span>
+                                            <span>09 Iyun</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="flex space-x-4">
+                                    <img src="https://cdn.beta.qalampir.uz/uploads/M5/f_UcDxwdV3BURI8c9ds35bk1bVOpwAy8.jpg" alt="Image" class="w-32 h-24 object-cover rounded-lg">
+                                    <div>
+                                        <p class="text-gray-800 font-semibold">Fransiya va AQSH Eronga bosim o'tkazadi - Makron</p>
+                                        <div class="flex items-center space-x-2 text-gray-500 text-sm mt-2">
+                                            <span>&#128065; 6925</span>
+                                            <span>08 Iyun</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="flex space-x-4">
+                                    <img src="https://cdn.beta.qalampir.uz/uploads/M5/f_UcDxwdV3BURI8c9ds35bk1bVOpwAy8.jpg" alt="Image" class="w-32 h-24 object-cover rounded-lg">
+                                    <div>
+                                        <p class="text-gray-800 font-semibold">NATO Ukraina bo'yicha maxsus vakil lavozimini yaratishni rejalashtirmoqda</p>
+                                        <div class="flex items-center space-x-2 text-gray-500 text-sm mt-2">
+                                            <span>&#128065; 2724</span>
+                                            <span>08 Iyun</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="flex space-x-4">
+                                    <img src="https://cdn.beta.qalampir.uz/uploads/M5/f_UcDxwdV3BURI8c9ds35bk1bVOpwAy8.jpg" alt="Image" class="w-32 h-24 object-cover rounded-lg">
+                                    <div>
+                                        <p class="text-gray-800 font-semibold">NATO Ukraina bo'yicha maxsus vakil lavozimini yaratishni rejalashtirmoqda</p>
+                                        <div class="flex items-center space-x-2 text-gray-500 text-sm mt-2">
+                                            <span>&#128065; 2724</span>
+                                            <span>08 Iyun</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="flex space-x-4">
+                                    <img src="https://cdn.beta.qalampir.uz/uploads/M5/f_UcDxwdV3BURI8c9ds35bk1bVOpwAy8.jpg" alt="Image" class="w-32 h-24 object-cover rounded-lg">
+                                    <div>
+                                        <p class="text-gray-800 font-semibold">NATO Ukraina bo'yicha maxsus vakil lavozimini yaratishni rejalashtirmoqda</p>
+                                        <div class="flex items-center space-x-2 text-gray-500 text-sm mt-2">
+                                            <span>&#128065; 2724</span>
+                                            <span>08 Iyun</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="flex space-x-4">
+                                    <img src="https://cdn.beta.qalampir.uz/uploads/M5/f_UcDxwdV3BURI8c9ds35bk1bVOpwAy8.jpg" alt="Image" class="w-32 h-24 object-cover rounded-lg">
+                                    <div>
+                                        <p class="text-gray-800 font-semibold">NATO Ukraina bo'yicha maxsus vakil lavozimini yaratishni rejalashtirmoqda</p>
+                                        <div class="flex items-center space-x-2 text-gray-500 text-sm mt-2">
+                                            <span>&#128065; 2724</span>
+                                            <span>08 Iyun</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section>
+                <div>
+                    <div class="flex flex-wrap justify-between gap">
+                        <!-- First Section -->
+                        <div class="jamiyat border border-solid mt-10 py-7 rounded-xl px-6 border-gray-300 mb-8">
+                            <div class="flex justify-between items-center border-b border-red-500 pb-2 mb-4">
+                                <h2 class="text-[20px] font-semibold text-red-500">Madaniyat-san'at</h2>
+                                <a href="https://www.qalampir.uz/uz/news/category/madaniyat-sanat" class="text-red-500">Barchasi &rarr;</a>
+                            </div>
+                            <div class="space-y-4">
+                                <div class="flex space-x-4">
+                                    <img src="https://ad-admin.qalampir.uz/uploads/kI/m_T5bpVyYBLMqwIBSrJkrD4mY2cv3WFe.jpg" alt="Image" class="w-32 h-24 object-cover rounded-lg">
+                                    <div>
+                                        <p class="text-gray-800 font-semibold">Qozog'istonda ichida o'zbekistonliklar bo'lgan avtomobil <br> yonib 
+                                             ketdi</p>
+                                        <div class="flex items-center space-x-2 text-gray-500 text-sm mt-2">
+                                            <span>&#128065; 8912</span>
+                                            <span>09 Iyun</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="flex space-x-4">
+                                    <img src="https://ad-admin.qalampir.uz/uploads/kI/m_T5bpVyYBLMqwIBSrJkrD4mY2cv3WFe.jpg" alt="Image" class="w-32 h-24 object-cover rounded-lg">
+                                    <div>
+                                        <p class="text-gray-800 font-semibold">Xorazmda 11 yoshli bolani devor bosib qoldi</p>
+                                        <div class="flex items-center space-x-2 text-gray-500 text-sm mt-2">
+                                            <span>&#128065; 10843</span>
+                                            <span>08 Iyun</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="flex space-x-4">
+                                    <img src="https://ad-admin.qalampir.uz/uploads/p6/m_hPHy6VG0fsjZwk2lV1JO6ntsSpqv9W.jpg" alt="Image" class="w-32 h-24 object-cover rounded-lg">
+                                    <div>
+                                        <p class="text-gray-800 font-semibold">Xorazmda 11 yoshli bolani devor bosib qoldi</p>
+                                        <div class="flex items-center space-x-2 text-gray-500 text-sm mt-2">
+                                            <span>&#128065; 9850</span>
+                                            <span>08 Iyun</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="flex space-x-4">
+                                    <img src="https://ad-admin.qalampir.uz/uploads/p6/m_hPHy6VG0fsjZwk2lV1JO6ntsSpqv9W.jpg" alt="Image" class="w-32 h-24 object-cover rounded-lg">
+                                    <div>
+                                        <p class="text-gray-800 font-semibold">Xorazmda 11 yoshli bolani devor bosib qoldi</p>
+                                        <div class="flex items-center space-x-2 text-gray-500 text-sm mt-2">
+                                            <span>&#128065; 9850</span>
+                                            <span>08 Iyun</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="flex space-x-4">
+                                    <img src="https://ad-admin.qalampir.uz/uploads/p6/m_hPHy6VG0fsjZwk2lV1JO6ntsSpqv9W.jpg" alt="Image" class="w-32 h-24 object-cover rounded-lg">
+                                    <div>
+                                        <p class="text-gray-800 font-semibold">Xorazmda 11 yoshli bolani devor bosib qoldi</p>
+                                        <div class="flex items-center space-x-2 text-gray-500 text-sm mt-2">
+                                            <span>&#128065; 9850</span>
+                                            <span>08 Iyun</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="flex space-x-4">
+                                    <img src="https://ad-admin.qalampir.uz/uploads/p6/m_hPHy6VG0fsjZwk2lV1JO6ntsSpqv9W.jpg" alt="Image" class="w-32 h-24 object-cover rounded-lg">
+                                    <div>
+                                        <p class="text-gray-800 font-semibold">Xorazmda 11 yoshli bolani devor bosib qoldi</p>
+                                        <div class="flex items-center space-x-2 text-gray-500 text-sm mt-2">
+                                            <span>&#128065; 9850</span>
+                                            <span>08 Iyun</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                
+                        <!-- Second Section -->
+                        <div class="olam h-[765px] border border-solid mt-10 py-7 rounded-xl px-6 border-gray-300">
+                            <div class="flex justify-between items-center border-b border-red-500 pb-2 mb-4">
+                                <h2 class="text-[20px] font-semibold text-red-500">Foydali</h2>
+                                <a href="https://www.qalampir.uz/uz/news/category/foydali" class="text-red-500">Barchasi &rarr;</a>
+                            </div>
+                            <div class="space-y-4">
+                                <div class="flex space-x-4">
+                                    <img src="https://cdn.beta.qalampir.uz/uploads/M5/f_UcDxwdV3BURI8c9ds35bk1bVOpwAy8.jpg" alt="Image" class="w-32 h-24 object-cover rounded-lg">
+                                    <div>
+                                        <p class="text-gray-800 font-semibold">Qirg'izistonda ham Qurbon hayiti kuni e'lon qilindi</p>
+                                        <div class="flex items-center space-x-2 text-gray-500 text-sm mt-2">
+                                            <span>&#128065; 13025</span>
+                                            <span>09 Iyun</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="flex space-x-4">
+                                    <img src="https://cdn.beta.qalampir.uz/uploads/M5/f_UcDxwdV3BURI8c9ds35bk1bVOpwAy8.jpg" alt="Image" class="w-32 h-24 object-cover rounded-lg">
+                                    <div>
+                                        <p class="text-gray-800 font-semibold">Fransiya va AQSH Eronga bosim o'tkazadi - Makron</p>
+                                        <div class="flex items-center space-x-2 text-gray-500 text-sm mt-2">
+                                            <span>&#128065; 6925</span>
+                                            <span>08 Iyun</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="flex space-x-4">
+                                    <img src="https://cdn.beta.qalampir.uz/uploads/M5/f_UcDxwdV3BURI8c9ds35bk1bVOpwAy8.jpg" alt="Image" class="w-32 h-24 object-cover rounded-lg">
+                                    <div>
+                                        <p class="text-gray-800 font-semibold">NATO Ukraina bo'yicha maxsus vakil lavozimini yaratishni rejalashtirmoqda</p>
+                                        <div class="flex items-center space-x-2 text-gray-500 text-sm mt-2">
+                                            <span>&#128065; 2724</span>
+                                            <span>08 Iyun</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="flex space-x-4">
+                                    <img src="https://cdn.beta.qalampir.uz/uploads/M5/f_UcDxwdV3BURI8c9ds35bk1bVOpwAy8.jpg" alt="Image" class="w-32 h-24 object-cover rounded-lg">
+                                    <div>
+                                        <p class="text-gray-800 font-semibold">NATO Ukraina bo'yicha maxsus vakil lavozimini yaratishni rejalashtirmoqda</p>
+                                        <div class="flex items-center space-x-2 text-gray-500 text-sm mt-2">
+                                            <span>&#128065; 2724</span>
+                                            <span>08 Iyun</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="flex space-x-4">
+                                    <img src="https://cdn.beta.qalampir.uz/uploads/M5/f_UcDxwdV3BURI8c9ds35bk1bVOpwAy8.jpg" alt="Image" class="w-32 h-24 object-cover rounded-lg">
+                                    <div>
+                                        <p class="text-gray-800 font-semibold">NATO Ukraina bo'yicha maxsus vakil lavozimini yaratishni rejalashtirmoqda</p>
+                                        <div class="flex items-center space-x-2 text-gray-500 text-sm mt-2">
+                                            <span>&#128065; 2724</span>
+                                            <span>08 Iyun</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="flex space-x-4">
+                                    <img src="https://cdn.beta.qalampir.uz/uploads/M5/f_UcDxwdV3BURI8c9ds35bk1bVOpwAy8.jpg" alt="Image" class="w-32 h-24 object-cover rounded-lg">
+                                    <div>
+                                        <p class="text-gray-800 font-semibold">NATO Ukraina bo'yicha maxsus vakil lavozimini yaratishni rejalashtirmoqda</p>
+                                        <div class="flex items-center space-x-2 text-gray-500 text-sm mt-2">
+                                            <span>&#128065; 2724</span>
+                                            <span>08 Iyun</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section>
+                <div class="">
+                    <!-- Sport Section -->
+                    <div class="jamiyat border border-solid mt-10 py-7 rounded-xl px-6 border-gray-300 mb-8">
+                        <div class="flex justify-between items-center border-b border-red-500 pb-2 mb-4">
+                            <h2 class="text-xl font-semibold text-red-500">Sport</h2>
+                            <a href="https://www.qalampir.uz/uz/news/category/sport" class="text-red-500">Barchasi &rarr;</a>
+                        </div>
+                        <div class="flex flex-wrap items-center justify-between space-y-4">
+                            <div class=" flex items-center px-5 space-x-4">
+                                <img src="https://ad-admin.qalampir.uz/uploads/ZO/m_4yYZym62w5wRaM1qeDJaN75RRueWZ3.jpg" alt="Image" class="w-32 h-24 object-cover rounded-lg">
+                                <div class="flex-1">
+                                    <p class="text-gray-800 font-semibold">Mahmud Murodov Octagon MMA bilan shartnoma tuzdi</p>
+                                    <div class="flex items-center justify-between text-gray-500 text-sm mt-2">
+                                        <span>&#128065; 1577</span>
+                                        <span>11:47</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class=" flex items-center px-5 space-x-4">
+                                <img src="https://ad-admin.qalampir.uz/uploads/vN/m_VttMfQLLt7JuuZcqhWFuvhslNzV7GH.jpg" alt="Image" class="w-32 h-24 object-cover rounded-lg">
+                                <div class="flex-1">
+                                    <p class="text-gray-800 font-semibold">Mahmud Murodov Octagon MMA bilan shartnoma tuzdi</p>
+                                    <div class="flex items-center justify-between text-gray-500 text-sm mt-2">
+                                        <span>&#128065; 1577</span>
+                                        <span>11:47</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class=" flex items-center px-5 space-x-4">
+                                <img src="https://ad-admin.qalampir.uz/uploads/5r/m_InIkvUcI843SF0dAhAs1epMiiMB8a6.jpg" alt="Image" class="w-32 h-24 object-cover rounded-lg">
+                                <div class="flex-1">
+                                    <p class="text-gray-800 font-semibold">Mahmud Murodov Octagon MMA bilan shartnoma tuzdi</p>
+                                    <div class="flex items-center justify-between text-gray-500 text-sm mt-2">
+                                        <span>&#128065; 1577</span>
+                                        <span>11:47</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class=" flex items-center px-5 space-x-4">
+                                <img src="https://ad-admin.qalampir.uz/uploads/y7/m_SdDCghy06XvjuQcUKjCQaB3B4tU3KI.jpg" alt="Image" class="w-32 h-24 object-cover rounded-lg">
+                                <div class="flex-1">
+                                    <p class="text-gray-800 font-semibold">Mahmud Murodov Octagon MMA bilan shartnoma tuzdi</p>
+                                    <div class="flex items-center justify-between text-gray-500 text-sm mt-2">
+                                        <span>&#128065; 1577</span>
+                                        <span>11:47</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class=" flex items-center px-5 space-x-4">
+                                <img src="https://ad-admin.qalampir.uz/uploads/RB/m_Qx7pjdF85vMlvbY5DirGJlUIw8weME.jpg" alt="Image" class="w-32 h-24 object-cover rounded-lg">
+                                <div class="flex-1">
+                                    <p class="text-gray-800 font-semibold">Mahmud Murodov Octagon MMA bilan shartnoma tuzdi</p>
+                                    <div class="flex items-center justify-between text-gray-500 text-sm mt-2">
+                                        <span>&#128065; 1577</span>
+                                        <span>11:47</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class=" flex items-center px-5 space-x-4">
+                                <img src="https://ad-admin.qalampir.uz/uploads/2L/m_M3HdSWDC59UNht04XfONueXGQ1HQV9.jpg" alt="Image" class="w-32 h-24 object-cover rounded-lg">
+                                <div class="flex-1">
+                                    <p class="text-gray-800 font-semibold">Mahmud Murodov Octagon MMA bilan shartnoma tuzdi</p>
+                                    <div class="flex items-center justify-between text-gray-500 text-sm mt-2">
+                                        <span>&#128065; 1577</span>
+                                        <span>11:47</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class=" flex items-center px-5 space-x-4">
+                                <img src="https://ad-admin.qalampir.uz/uploads/NT/m_mjL5dKYzKp0jenyOzuvJ8LywRMrW84.jpg" alt="Image" class="w-32 h-24 object-cover rounded-lg">
+                                <div class="flex-1">
+                                    <p class="text-gray-800 font-semibold">Mahmud Murodov Octagon MMA bilan shartnoma tuzdi</p>
+                                    <div class="flex items-center justify-between text-gray-500 text-sm mt-2">
+                                        <span>&#128065; 1577</span>
+                                        <span>11:47</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class=" flex items-center px-5 space-x-4">
+                                <img src="https://ad-admin.qalampir.uz/uploads/BD/m_5qodDbyzRhbOqnCK33eaR0dY0c8uZA.jpg" alt="Image" class="w-32 h-24 object-cover rounded-lg">
+                                <div class="flex-1">
+                                    <p class="text-gray-800 font-semibold">Mahmud Murodov Octagon MMA bilan shartnoma tuzdi</p>
+                                    <div class="flex items-center justify-between text-gray-500 text-sm mt-2">
+                                        <span>&#128065; 1577</span>
+                                        <span>11:47</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div> 
+            </section>
+        </div>
+    </main>
+    <footer>
+        <div class="container">
+            <div class=" px-6">
+                <div class="flex flex-col items-center space-y-4 md:space-y-0 md:flex-row md:justify-between">
+                    <!-- Logo and Menu -->
+                    <div class="flex flex-col items-center md:flex-row md:items-center md:space-x-6">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSKsfJHU0wsbSOgYLckVWFgevD6D88g-6Qlp24pXUPmPt9skF8J" alt="Logo" class="h-10 mb-4 md:mb-0">
+                        <div class="flex flex-col md:flex-row md:space-x-4 text-center md:text-left">
+                            <a href="#" class="text-gray-800 hover:text-red-500 mb-2 md:mb-0">Sayt haqida</a>
+                            <a href="#" class="text-gray-800 hover:text-red-500 mb-2 md:mb-0">Biznes</a>
+                            <a href="#" class="text-gray-800 hover:text-red-500 mb-2 md:mb-0">Aloqa</a>
+                            <a href="#" class="text-gray-800 hover:text-red-500 mb-2 md:mb-0">Arxiv</a>
+                        </div>
+                    </div>
+                    <!-- Social Media Links -->
+                    <div class="flex space-x-4">
+                        <a href="#"><img src="data:image/png;base64,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" alt="Facebook" class="h-6"></a>
+                        <a href="#"><img src="data:image/png;base64,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" alt="YouTube" class="h-6"></a>
+                        <a href="#"><img src="data:image/jpeg;base64,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" alt="Instagram" class="h-6"></a>
+                        <a href="#"><img src="data:image/png;base64,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" alt="Telegram" class="h-6"></a>
+                        <a href="#"><img src="data:image/png;base64,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" alt="Twitter" class="h-6"></a> -->
+                    </div>
+                </div>
+    
+                <div class="mt-6 text-center md:text-left">
+                    <p class="text-gray-500 text-sm">QALAMPIR.UZ. Web-Site OAV sifatida 2018 yil 26 oktyabr kuni O‘zbekiston Respublikasi Prezidenti Administratsiyasi huzuridagi Axborot va ommaviy kommunikatsiyalar agentligidan 1089 raqam bilan ro‘yxatga olingan.</p>
+                    <p class="text-gray-500 text-sm mt-2">Muassis: “QALAMPIR” MChJ.</p>
+                    <p class="text-gray-500 text-sm mt-2">Tahririyat manzili: 100174, Toshkent shahri, Beruniy ko‘chasi, 88-uy.</p>
+                    <p class="text-gray-500 text-sm mt-2">Elektron manzil: info@qalampir.uz</p>
+                </div>
+    
+                <div class="flex flex-col items-center mt-6 space-y-4 md:space-y-0 md:flex-row md:justify-between">
+                    <p class="text-gray-500 text-sm text-center md:text-left">© Copyright 2024 Qalampir - Haqiqat achchiq bo‘ladi.</p>
+                    <div class="flex space-x-4">
+                        <a href="#"><img src="https://www.skyfibernet.com/wp-content/uploads/2017/03/apple_btn.jpg" alt="App Store" class="h-10"></a>
+                        <a href="#"><img src="https://www.doncasters.com/wp-content/uploads/2023/06/google_button-300x101.png" alt="Google Play" class="h-10"></a>
+                        <a href="#"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT5zS1dI__l7Q1LewOckWKTP1PidSFS_FndKWhXwbVcEiQWA3dg" alt="App Gallery" class="w-[20px] h-10"></a>
+                    </div>
+                </div>
+    
+                <div class="flex justify-center mt-6 md:justify-end">
+                    <div class="bg-gray-200 p-2 rounded-full">
+                        <span class="text-gray-800 text-xs">16+</span>
+                    </div>
+                </div>
+            </div>
+    
+        </div>
+    </footer>
+
+
+
+    <script>
+        document.getElementById('menu-toggle').addEventListener('click', function() {
+            document.getElementById('mobile-menu').classList.toggle('hidden');
+        });
+
+        
+
+        document.addEventListener('DOMContentLoaded', function () {
+            const items = document.querySelectorAll('.carousel-item');
+            let currentItem = 0;
+            const totalItems = items.length;
+
+            function showItem(index) {
+                items.forEach(item => item.classList.remove('active'));
+                items[index].classList.add('active');
+            }
+
+            function nextItem() {
+                currentItem = (currentItem + 1) % totalItems;
+                showItem(currentItem);
+            }
+
+            function prevItem() {
+                currentItem = (currentItem - 1 + totalItems) % totalItems;
+                showItem(currentItem);
+            }
+
+            document.getElementById('next').addEventListener('click', nextItem);
+            document.getElementById('prev').addEventListener('click', prevItem);
+
+            setInterval(nextItem, 3000); // Slide change interval
+        });
+
+
+        function toggleDropdown() {
+        const dropdownContent = document.querySelector('.dropdown-content');
+        dropdownContent.style.display = dropdownContent.style.display === 'block' ? 'none' : 'block';
+        }
+    </script>
+    <script src="./js/index.js"></script>
+</body>
+</html>
+
